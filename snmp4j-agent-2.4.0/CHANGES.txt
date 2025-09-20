@@ -2,6 +2,14 @@
 CHANGE LOG OF SNMP4J-Agent
 ==========================
 
+[2025-09-20] v2.5.0 (Requires SNMP4J v2.3.4 or later)
+
+* Added: Official Java 8 support; minimum supported JDK raised to 1.8.
+* Updated: Maven build compiles with source/target 1.8 via maven-compiler-plugin 3.11.0.
+* Updated: Ant build compiles with source/target 1.8.
+* Improved: Javadoc doclint disabled for JDK 8 to avoid strict check failures.
+* Note: No public API changes introduced solely for Java 8 enablement.
+
 [2015-07-18] v2.4.0 (Requires SNMP4J v2.3.4 or later)
 
 * Fixed [SFJ-108]: GETBULK with too fewer OIDs than specified non-repeaters and max-repetitions > 0

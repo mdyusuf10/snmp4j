@@ -86,6 +86,9 @@ public class SnmpTest extends TestCase {
 
   @Before
   public void setUp() throws Exception {
+    // Ensure tests are isolated: do not allow SNMPv2 in v1 by default
+    // Some tests (e.g., testTrapV2WithV1Allowed) enable this flag and must not leak to others
+    SNMP4JSettings.setAllowSNMPv2InV1(false);
     transportMappingCG = new DummyTransport<UdpAddress>(new UdpAddress("127.0.0.1/4967"));
     transportMappingCR = transportMappingCG.getResponder(new UdpAddress("127.0.0.1/161"));
     snmpCommandGenerator = new Snmp(transportMappingCG);

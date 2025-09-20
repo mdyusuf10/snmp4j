@@ -20,7 +20,7 @@
   <target depends="init" name="javacompile">
     <javac classpathref="project.class.path" debug="true"
            deprecation="true" destdir="${dest}" nowarn="true"
-           source="1.6" target="1.6">
+           source="1.8" target="1.8">
       <src path="${src}"/>
       <!--
       <src path="${src2}"/>
@@ -70,7 +70,7 @@
     </copy>
   </target>
   <target name="javadoc">
-    <javadoc author="true" destdir="${doc}" classpathref="project.class.path"
+    <javadoc author="true" destdir="${doc}" classpathref="project.class.path" additionalparam="-Xdoclint:none"
       packagenames="org.snmp4j.agent,org.snmp4j.agent.io,org.snmp4j.agent.io.prop,org.snmp4j.agent.mo,org.snmp4j.agent.mo.snmp,org.snmp4j.agent.mo.snmp.smi,org.snmp4j.agent.mo.snmp.tc,org.snmp4j.agent.mo.snmp4j,org.snmp4j.agent.mo.util,org.snmp4j.agent.request,org.snmp4j.agent.security,org.snmp4j.agent.util,org.snmp4j.agent.version"
       protected="true" version="true" excludepackagenames="org.snmp4j.agent.test">
       <fileset dir="${src}"/>
